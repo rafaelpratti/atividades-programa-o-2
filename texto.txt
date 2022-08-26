@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<style>
+			h2 {color: darkblue;}
+			h3 {color: darkgreen;}
+			h3 {color: lightblue;}
+		</style>
+	</head>	
+	<body>
+		<h1>Título</h1>
+		<h2>Subtítulo 1</h2>
+		<h2>Subtítulo 2</h2>
+		<h2>Subtítulo 3</h2>
+		<h2>Subtítulo 4</h2>
+		<h4>mousedown, mouseup</h4>
+		<button onmousedown="alert('mousedown')">Mouse down</button>
+		<a href='' onclick="alert('click')">Click</a>
+		<br>
+		<button onmouseup="alert('mouseup')">Mouse Up</button>
+		<br>
+		<input type='text' onfocus="console.log('focus')">On focus</input>
+		<br>
+		<input type='text' onchange="console.log('change')">On change</input>
+		<button id="atributo" onclick="console.log('atributo')">
+			handler via atributo
+		</button>	
+		<button id="propriedade">
+			handler via atributo
+		</button>
+		
+		<button id="propriedade" onclick="funcprop()">
+			handler via onclick(funcprop)
+		</button>
+		<script>
+			const btnprop = document.querySelector('#propriedade')
+			btnprop.onclick = funcprop
+			function funcprop() {
+				console.log('propriedade')
+			}
+		</script>
+	<h3> Listeners </h3>
+	<button id="listener"> handler via listener</button>
+	<script>
+		const btnlist = document.querySelector('#listener')
+		function funclist() {
+			console.log('listener')
+		}
+		btnlist.addEventListener('click', funclist)
+		btnlist.addEventListener('click', funcprop)
+		btnlist.addEventListener('click', ()=>{
+			console.log('arrow function')
+		})
+		
+		function removeHandler() {
+			btnlist.removeEventListener('click',funcprop)
+			btnlist.removeEventListener('click',funclist)
+			console.log('handler removido')
+		}
+	</script>
+	<button onclick="removeHandler()">Remove handler<button>
+	</body>
+</html>
