@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API fetch</title>
+    <style>
+        input {
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>API fetch</h1>
+
+    <form>
+        <input type="text" id="cep" placeholder="CEP" size="11">
+        <input type="text" id="estado" placeholder="Estado" size="3">
+        <br>
+        <input type="text" id="cidade" placeholder="cidade">
+        <br>
+        <input type="text" id="bairro" placeholder="bairro"> <br>
+        <input type="text" id="logradouro" placeholder="logradouro">
+    </form>
+
+    <script>
+        const inputcep = document.querySelector("#cep")
+        inputcep.addEventListener('change', buscadadosAPI)
+        function buscadadosAPI (evento){
+            const cep = evento.target.value
+            fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`)
+            .then(resposta => resposta.json())
+            .then(dados => {
+                atribuivalor('estado', dados.state)
+                atribuivalor('cidade', dados.city)
+                atribuivalor('bairro', dados.neighborhood)
+                atribuivalor('logradouro', dados.street)
+            })
+            function atribuivalor(id, valor) {
+                document.querySelector(`#${id}`).value = valor
+            }
+        }
+
+    </script>
+</body>
+</html>
