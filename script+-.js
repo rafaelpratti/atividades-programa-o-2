@@ -1,4 +1,4 @@
-    <script>
+
         let hprimeiro = document.querySelector('h1')
         if (hprimeiro == null) {
             hprimeiro = document.querySelector('h2','h3','h4','h5','h6')
@@ -17,11 +17,7 @@
         botaoaumenta.innerHTML = '+'
         hprimeiro.appendChild(botaoaumenta)
         hprimeiro.insertBefore(botaodiminui,botaoaumenta)
-
         
-    </script>
-
-    <script>
         let aumenta = 70;
         const btnaumenta = document.querySelector('#btn-Aumenta')
         btnaumenta.addEventListener('click', a)
@@ -44,4 +40,3 @@
             console.log(aumenta)
         }
         }
-    </script>
