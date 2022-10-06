@@ -109,7 +109,7 @@ function drop(){
 				event.target.appendChild(document.getElementById(data));
 				jogada += 1;
 				if(ya - yf == 2 || ya - yf == -2) {
-					pecaCapturada.fadeout();
+					pecaCapturada.className = "#desvanecer";
 					pecaCapturada = '';
 					classeCapturada = '';
 				}
