@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Documento</title>
-    <style>
-        .desvanecer{
-            transition: opacity 2s ease-in;
-        }
-    </style>
-</head>
-<body>
-    <script>
-        const tamanhoCelula = 40;
+const tamanhoCelula = 40;
 let pecaId = 0;
 let localAtual = 80;
 let localFuturo = 81;
@@ -135,6 +123,4 @@ dragstart();
 dragend();
 dragover();
 drop();
-    </script>
-</body>
-</html>
+
