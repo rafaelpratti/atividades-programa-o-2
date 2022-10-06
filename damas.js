@@ -1,4 +1,16 @@
-const tamanhoCelula = 40;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Documento</title>
+    <style>
+        .desvanecer{
+            transition: opacity 2s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const tamanhoCelula = 40;
 let pecaId = 0;
 let localAtual = 80;
 let localFuturo = 81;
@@ -109,7 +121,7 @@ function drop(){
 				event.target.appendChild(document.getElementById(data));
 				jogada += 1;
 				if(ya - yf == 2 || ya - yf == -2) {
-					pecaCapturada.className = "#desvanecer";
+					pecaCapturada.remove();
 					pecaCapturada = '';
 					classeCapturada = '';
 				}
@@ -123,3 +135,6 @@ dragstart();
 dragend();
 dragover();
 drop();
+    </script>
+</body>
+</html>
